@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Conveyance Fee Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Conveyance Fee Calculator</h1>
+
+        <div class="form-group">
+            <label for="cost">Sale Price</label>
+            <input type="number" id="cost" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="lines">Number of Parcels</label>
+            <input type="number" id="lines" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="status">Exempt from Conveyance Fees?</label>
+            <select id="status" class="form-control">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+            </select>
+        </div>
+
+        <button onclick="calcFee(Number(document.getElementById('cost').value), Number(document.getElementById('lines').value), document.getElementById('status').value === 'true')" class="btn btn-primary">Calculate</button>
+
+        <div class="form-group">
+            <label for="line_fee">Line Fee</label>
+            <input type="text" id="line_fee" class="form-control" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="formatted_fee">Conveyance Fee</label>
+            <input type="text" id="formatted_fee" class="form-control" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="total_cost">Total Cost</label>
+            <input type="text" id="total_cost" class="form-control" readonly>
+        </div>
+
+        <button onclick="fieldReset()" class="btn btn-danger">Reset</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
